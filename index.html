@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buna Draga (2bunuki7) — Student Developer, Prishtina</title>
+<meta name="description" content="Portfolio of Buna Draga, also 2bunuki7: an IT student from Prishtina, Kosovo building C# desktop software, automation workflows and embedded electronics.">
+<meta name="theme-color" content="#080808">
+<meta property="og:title" content="Buna Draga / 2bunuki7 — Portfolio">
+<meta property="og:description" content="Software, systems, electronics. Selected work by a student developer from Prishtina.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sleeptight.monster/">
+<link rel="canonical" href="https://sleeptight.monster/">
+<!-- OG IMAGE: none exists yet. When you have one, add:
+     <meta property="og:image" content="https://sleeptight.monster/og.png"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#080808;--carbon:#101010;--graphite:#191919;--iron:#292929;--concrete:#727272;--silver:#b8b8b8;--bone:#e6e6e2;--white:#f4f4f0;
+  --steel:#748594;--warn:#a74747;
+  --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:64px;--s8:96px;--s9:144px;
+  --display:"Space Grotesk",Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--body:Inter,Arial,sans-serif;
+  --pad:clamp(16px,4vw,48px);--t:150ms;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px;background:var(--void)}
+body{background:var(--void);color:var(--bone);font:400 16px/1.6 var(--body);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+.skip{position:absolute;left:-999px;background:var(--white);color:var(--void);padding:var(--s2) var(--s3);font:500 12px var(--mono);z-index:100}
+.skip:focus{left:var(--s3);top:var(--s3)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono)}
+.meta{font:400 11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--concrete)}
+.meta b{color:var(--silver);font-weight:500}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.045em;line-height:.9;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 var(--s4)}
+section{border-top:4px solid var(--bone);padding:var(--s7) 0 var(--s8)}
+.idx{font:500 12px var(--mono);letter-spacing:.08em;color:var(--silver);text-transform:uppercase;padding-bottom:var(--s5)}
+h2{font-size:clamp(44px,8vw,96px)}
+.lede{max-width:56ch;color:var(--silver);margin-top:var(--s4)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:var(--void);border-bottom:1px solid var(--iron)}
+nav{display:flex;align-items:center;justify-content:space-between;height:56px;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+nav ul{display:flex;list-style:none;gap:var(--s4)}
+nav a{padding:var(--s2) 0;border-bottom:2px solid transparent;transition:border-color var(--t),color var(--t)}
+nav a:hover,nav a.on{border-color:var(--white);color:var(--white)}
+nav a{color:var(--silver)}
+.brand{color:var(--white)}
+.mbtn{display:none;background:none;border:1px solid var(--bone);color:var(--bone);font:500 12px var(--mono);padding:var(--s2) var(--s3);min-height:40px;cursor:pointer;letter-spacing:.08em}
+#menu{display:none;position:fixed;inset:57px 0 0 0;background:var(--void);z-index:49;overflow:auto}
+#menu.open{display:block}
+#menu a{display:flex;justify-content:space-between;align-items:baseline;padding:var(--s4) var(--pad);border-bottom:1px solid var(--iron);font:700 clamp(36px,11vw,64px)/1 var(--display);letter-spacing:-.04em;text-transform:uppercase}
+#menu a span{font:400 12px var(--mono);color:var(--concrete)}
+#menu a:hover{background:var(--white);color:var(--void)}
+
+/* buttons */
+.btn{display:inline-block;font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:var(--s3) var(--s4);border:2px solid var(--white);min-height:48px;cursor:pointer;transition:background var(--t),color var(--t)}
+.btn.p{background:var(--white);color:var(--void)}
+.btn.p:hover{background:var(--void);color:var(--white)}
+.btn.s{background:none;color:var(--white)}
+.btn.s:hover{background:var(--white);color:var(--void)}
+.arr{display:inline-block;transition:transform var(--t)}
+a:hover .arr,button:hover .arr{transform:translate(3px,-3px)}
+
+/* hero */
+#top{border-top:0;padding:var(--s5) 0 var(--s7);
+  background-image:linear-gradient(var(--graphite) 1px,transparent 1px),linear-gradient(90deg,var(--graphite) 1px,transparent 1px);
+  background-size:96px 96px;background-position:-1px -1px}
+.hmeta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--s2) var(--s4);padding-bottom:var(--s5);border-bottom:1px solid var(--iron)}
+.name{font-size:clamp(64px,19vw,260px);line-height:.82;letter-spacing:-.06em;color:var(--white);margin:var(--s6) 0 var(--s5);overflow-wrap:normal}
+.name span{display:block}
+.name span+span{margin-left:clamp(0px,8vw,140px)}
+.sub{font:600 clamp(12px,2.2vw,16px) var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--silver)}
+.stmt{font:600 clamp(26px,4vw,48px)/1.05 var(--display);letter-spacing:-.03em;max-width:20ch;margin:var(--s5) 0 var(--s4)}
+.hero-copy{max-width:48ch;color:var(--silver)}
+.cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin:var(--s5) 0 var(--s6)}
+.ann{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--iron)}
+.ann div{padding:var(--s3) var(--s3) 0 0;border-right:0}
+
+/* record */
+#record{border-top:1px solid var(--iron);padding:var(--s7) 0;background:var(--carbon)}
+.rec{font:400 clamp(11px,2.9vw,14px)/2 var(--mono);color:var(--bone);max-width:640px;border:1px solid var(--iron);background:var(--void);padding:var(--s4);overflow-x:auto;white-space:pre}
+.rec i{font-style:normal;color:var(--concrete)}
+
+/* about */
+.a-l{grid-column:1/6}.a-r{grid-column:7/13}
+.a-r p{max-width:60ch;margin-bottom:var(--s4);color:var(--silver)}
+.a-r p:first-child{color:var(--bone);font-size:18px}
+dl.prof{margin-top:var(--s5);border-top:1px solid var(--iron);font:400 12px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.04em}
+dl.prof div{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--iron);padding:var(--s2) 0}
+dl.prof dt{color:var(--concrete)}
+
+/* stack */
+.row{display:grid;grid-template-columns:80px 260px 1fr auto;gap:var(--s4);align-items:baseline;padding:var(--s4) var(--s3);border-top:1px solid var(--iron);transition:background var(--t),color var(--t)}
+.row:last-child{border-bottom:1px solid var(--iron)}
+.row:hover{background:var(--bone);color:var(--void)}
+.row:hover .meta,.row:hover p{color:var(--void)}
+.row h3{font-size:clamp(22px,2.6vw,30px);letter-spacing:-.03em;line-height:1}
+.row p{font:400 13px/1.7 var(--mono);color:var(--silver);text-transform:uppercase}
+.stack{margin-top:var(--s6)}
+
+/* projects */
+.proj{border-top:4px solid var(--bone);padding:var(--s6) 0 var(--s7)}
+.proj:first-of-type{margin-top:var(--s6)}
+.pg{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s5) var(--s4);align-items:start}
+.pt{grid-column:1/6}.pf{grid-column:6/13}
+.proj:nth-of-type(even) .pt{grid-column:8/13;grid-row:1}
+.proj:nth-of-type(even) .pf{grid-column:1/8;grid-row:1}
+.pn{font:700 clamp(72px,10vw,150px)/.8 var(--display);letter-spacing:-.06em;color:var(--iron)}
+.proj h3{font-size:clamp(34px,4.6vw,64px);margin:var(--s3) 0 var(--s3)}
+.proj p.d{color:var(--silver);max-width:46ch}
+.proj ul{list-style:none;margin:var(--s4) 0;font:400 12px/1.5 var(--mono);text-transform:uppercase}
+.proj li{padding:6px 0;border-top:1px solid var(--iron);color:var(--silver)}
+.proj li::before{content:"+ ";color:var(--concrete)}
+.stk{font:500 12px/1.6 var(--mono);color:var(--bone);text-transform:uppercase;margin-bottom:var(--s4)}
+.plink{display:inline-block;border:1px solid var(--bone);padding:var(--s2) var(--s3);font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;transition:background var(--t),color var(--t)}
+.plink:hover{background:var(--bone);color:var(--void)}
+.stat{color:var(--steel)}
+figure{border:1px solid var(--bone);background:var(--carbon)}
+figcaption{padding:var(--s2) var(--s3);border-top:1px solid var(--iron);font:400 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--concrete)}
+.fb{padding:var(--s3);overflow-x:auto}
+.fb svg{display:block;width:100%;height:auto;min-width:420px}
+pre.cli{font:400 clamp(11px,1.5vw,13px)/1.7 var(--mono);color:var(--bone);white-space:pre;min-width:0}
+.dim{color:var(--concrete)}
+.win{border:1px solid var(--silver);background:var(--void);font:400 12px/1.5 var(--mono);min-width:420px}
+.win .tb{display:flex;justify-content:space-between;padding:6px var(--s3);border-bottom:1px solid var(--silver);background:var(--graphite);color:var(--silver)}
+.win .wr{display:grid;grid-template-columns:1fr 110px 90px;padding:8px var(--s3);border-bottom:1px solid var(--iron)}
+.win .wr.h{color:var(--concrete);text-transform:uppercase;font-size:10px}
+.win .bar{display:flex;gap:var(--s2);padding:var(--s3)}
+.win .bar span{border:1px solid var(--silver);padding:4px var(--s3);font-size:11px;text-transform:uppercase}
+.win .bar span.f{background:var(--bone);color:var(--void)}
+.red{color:#c26a6a}
+
+/* chrono */
+.ch{display:grid;grid-template-columns:3fr 9fr;gap:var(--s4);padding:var(--s5) 0;border-top:1px solid var(--iron)}
+.ch:last-child{border-bottom:1px solid var(--iron)}
+.ch time{font:700 clamp(36px,5vw,64px)/.9 var(--display);letter-spacing:-.05em}
+.ch h3{font:600 13px var(--mono);letter-spacing:.06em;margin-bottom:var(--s2);color:var(--silver)}
+.ch p{max-width:58ch;color:var(--silver)}
+
+/* interests */
+.int{display:grid;grid-template-columns:80px 1fr;gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--iron);transition:background var(--t),color var(--t);align-items:baseline}
+.int:last-child{border-bottom:1px solid var(--iron)}
+.int h3{font-size:clamp(44px,10vw,140px);letter-spacing:-.06em}
+.int p{max-width:50ch;color:var(--silver);margin-top:var(--s2)}
+.int:hover{background:var(--bone);color:var(--void)}
+.int:hover p,.int:hover .meta{color:var(--void)}
+
+/* contact */
+#contact h2{font-size:clamp(48px,11vw,180px);letter-spacing:-.06em}
+.dir{margin-top:var(--s6);border-top:1px solid var(--iron)}
+.dir a,.dir button{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--iron);color:var(--bone);font:600 clamp(16px,2.4vw,24px) var(--mono);letter-spacing:.04em;text-align:left;padding:var(--s4) var(--s3);min-height:56px;cursor:pointer;text-transform:uppercase;transition:background var(--t),color var(--t)}
+.dir a:hover,.dir button:hover{background:var(--bone);color:var(--void)}
+#copied{font:400 12px var(--mono);color:var(--steel);min-height:20px;padding:var(--s2) var(--s3)}
+footer{border-top:4px solid var(--bone);padding:var(--s5) 0 var(--s6)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s3)}
+
+.rv{opacity:0;transition:opacity 400ms ease}.rv.in{opacity:1}
+
+@media (max-width:1023px){
+  .a-l,.a-r,.pt,.pf,.proj:nth-of-type(even) .pt,.proj:nth-of-type(even) .pf{grid-column:1/13;grid-row:auto}
+  .row{grid-template-columns:56px 1fr;}
+  .row p{grid-column:2}.row .meta:last-child{display:none}
+  nav ul{gap:var(--s3)}
+}
+@media (max-width:860px){
+  nav ul,nav .gh{display:none}.mbtn{display:block}
+  .ann{grid-template-columns:1fr 1fr}
+  .ch{grid-template-columns:1fr}
+  .int{grid-template-columns:44px 1fr}
+  dl.prof div{grid-template-columns:110px 1fr}
+  section{padding:var(--s6) 0 var(--s7)}
+}
+@media (max-width:479px){.name{font-size:clamp(56px,22vw,90px)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header>
+ <nav class="wrap" aria-label="Primary">
+  <a class="brand" href="#top">2BUNUKI7 / INDEX</a>
+  <ul>
+   <li><a href="#about">[01] About</a></li>
+   <li><a href="#stack">[02] Stack</a></li>
+   <li><a href="#work">[03] Work</a></li>
+   <li><a href="#journey">[04] Journey</a></li>
+   <li><a href="#contact">[05] Contact</a></li>
+  </ul>
+  <a class="gh" href="https://github.com/2bunuki7" rel="noopener" target="_blank">GitHub <span class="arr">↗</span></a>
+  <button class="mbtn" id="mbtn" aria-expanded="false" aria-controls="menu">MENU</button>
+ </nav>
+</header>
+<div id="menu" aria-label="Index">
+ <a href="#about"><span>01</span>About</a>
+ <a href="#stack"><span>02</span>Stack</a>
+ <a href="#work"><span>03</span>Work</a>
+ <a href="#journey"><span>04</span>Journey</a>
+ <a href="#contact"><span>05</span>Contact</a>
+</div>
+
+<main>
+<section id="top">
+ <div class="wrap">
+  <div class="hmeta meta"><span>Portfolio / 2026</span><span>Prishtina, Kosovo</span><span>Software / Systems / Experimentation</span></div>
+  <h1 class="name" aria-label="Buna Draga"><span>Buna</span><span>Draga.</span></h1>
+  <p class="sub">Student Developer / Creative Technologist</p>
+  <p class="stmt">Building software. Understanding systems. Questioning everything.</p>
+  <p class="hero-copy">I'm an IT student interested in what happens beneath the interface — from software architecture and operating systems to electronics and creative development.</p>
+  <div class="cta">
+   <a class="btn p" href="#work">[ View selected work <span class="arr">↗</span> ]</a>
+   <a class="btn s" href="https://github.com/2bunuki7" target="_blank" rel="noopener">[ GitHub <span class="arr">↗</span> ]</a>
+  </div>
+  <div class="ann meta">
+   <div>Identity<br><b>2bunuki7</b></div><div>Location<br><b>XK-PR</b></div>
+   <div>Discipline<br><b>Software development</b></div><div>Status<br><b>Learning &amp; building</b></div>
+  </div>
+ </div>
+</section>
+
+<div id="record"><div class="wrap">
+<pre class="rec" role="img" aria-label="User record 001. Name Buna Draga. Alias 2bunuki7. Location Prishtina, Kosovo. Discipline information technology. Interests software, systems, art. Status active.">USER RECORD / 001
+<i>────────────────────────────────────────</i>
+NAME          BUNA DRAGA
+ALIAS         2BUNUKI7
+LOCATION      PRISHTINA, KOSOVO
+DISCIPLINE    INFORMATION TECHNOLOGY
+INTERESTS     SOFTWARE / SYSTEMS / ART
+STATUS        ACTIVE
+<i>────────────────────────────────────────</i></pre>
+</div></div>
+
+<section id="about">
+ <div class="wrap grid">
+  <div class="a-l"><div class="idx">01 / About</div><h2>Under the surface.</h2></div>
+  <div class="a-r rv">
+   <p>I'm Buna, an IT student from Prishtina, Kosovo. I spend much of my time learning how software works, experimenting with programming languages, and building projects that help me understand systems beyond their interfaces.</p>
+   <p>My interests move between software engineering, Linux, automation, electronics, and creative work. I enjoy the process of figuring things out — whether that's debugging a program, designing a circuit, or exploring a completely unfamiliar tool.</p>
+   <dl class="prof">
+    <div><dt>Languages</dt><dd>Albanian, English</dd></div>
+    <div><dt>Focus</dt><dd>Software, operating systems, automation, electronics</dd></div>
+    <div><dt>Also</dt><dd>Reverse engineering, networking, creative computing</dd></div>
+    <div><dt>Status</dt><dd>Still learning. Taking it seriously.</dd></div>
+   </dl>
+  </div>
+ </div>
+</section>
+
+<section id="stack">
+ <div class="wrap">
+  <div class="idx">02 / Technical inventory</div>
+  <h2>Tools / systems / languages</h2>
+  <div class="stack">
+   <div class="row"><span class="meta">001</span><h3>Programming</h3><p>C# / Python / JavaScript / Java / SQL / HTML / CSS</p><span class="meta">Languages</span></div>
+   <div class="row"><span class="meta">002</span><h3>Web</h3><p>HTML5 / CSS3 / Responsive design / JavaScript DOM / Tailwind CSS / REST APIs</p><span class="meta">Frontend</span></div>
+   <div class="row"><span class="meta">003</span><h3>Systems &amp; desktop</h3><p>.NET / WPF / XAML / Windows / Linux / Arch Linux / PowerShell / Git / GitHub</p><span class="meta">Platform</span></div>
+   <div class="row"><span class="meta">004</span><h3>Data &amp; automation</h3><p>MySQL / MySQL Workbench / n8n / Python scripting / API integrations / Workflows</p><span class="meta">Pipeline</span></div>
+   <div class="row"><span class="meta">005</span><h3>Electronics &amp; networking</h3><p>ESP32-S3 / KiCad / Sensors / I²C / Circuit design / Cisco Packet Tracer</p><span class="meta">Hardware</span></div>
+   <div class="row"><span class="meta">006</span><h3>Creative tools</h3><p>Blender / Visual Studio Code / Visual Studio / Digital art / 3D modeling</p><span class="meta">Creative</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="work">
+ <div class="wrap">
+  <div class="idx">03 / Selected work</div>
+  <h2>Built / broken / fixed.</h2>
+  <p class="lede">Selected experiments and applications built to understand software, solve practical problems, and explore unfamiliar technologies.</p>
+  <!-- REPO LINKS: every "Repository" link below points to the GitHub profile because
+       individual repo URLs were not verified. Replace each href with the real repo URL. -->
+
+  <article class="proj"><div class="pg">
+   <div class="pt"><div class="pn" aria-hidden="true">001</div>
+    <p class="meta">Windows / System utility</p><h3>Website Blocker</h3>
+    <p class="d">A Windows desktop application that manages website restrictions through operating-system-level configuration.</p>
+    <ul><li>Windows hosts-file modification</li><li>Domain and subdomain handling</li><li>Administrator privilege management</li><li>Persistent local configuration</li><li>DNS cache flushing</li><li>Desktop UI architecture</li><li>Logging and automated testing</li><li>Background service components</li></ul>
+    <p class="stk">C# / .NET / WPF / XAML / Windows Services / xUnit</p>
+    <a class="plink" href="https://github.com/2bunuki7" target="_blank" rel="noopener">Repository (set URL) <span class="arr">↗</span></a></div>
+   <div class="pf"><figure><div class="fb">
+    <!-- SCREENSHOT: replace this .win block with <img src="blocker.png" alt="Website Blocker main window"> -->
+    <div class="win" role="img" aria-label="Mockup of the Website Blocker window with a domain list and status controls">
+     <div class="tb"><span>Website Blocker</span><span>[ _ ] [ X ]</span></div>
+     <div class="wr h"><span>Domain</span><span>Scope</span><span>State</span></div>
+     <div class="wr"><span>example-social.com</span><span>+ subdomains</span><span class="red">BLOCKED</span></div>
+     <div class="wr"><span>example-video.com</span><span>exact</span><span class="red">BLOCKED</span></div>
+     <div class="wr"><span>example-news.com</span><span>+ subdomains</span><span class="dim">PAUSED</span></div>
+     <div class="wr"><span class="dim">Hosts file: writable (admin)</span><span></span><span>3 rules</span></div>
+     <div class="bar"><span class="f">Add</span><span>Remove</span><span>Flush DNS</span><span>Apply</span></div>
+    </div></div><figcaption>Fig. 001 / Application interface (illustrative mockup)</figcaption></figure></div>
+  </div></article>
+
+  <article class="proj"><div class="pg">
+   <div class="pt"><div class="pn" aria-hidden="true">002</div>
+    <p class="meta">Security / CLI utility</p><h3>Password Generator</h3>
+    <p class="d">A command-line password generator using cryptographically secure random-number generation.</p>
+    <ul><li>Configurable password length</li><li>Secure random-number generation</li><li>Character-set selection</li><li>Input validation</li><li>Minimal terminal interface</li></ul>
+    <p class="stk">C# / .NET / System.Security.Cryptography</p>
+    <a class="plink" href="https://github.com/2bunuki7" target="_blank" rel="noopener">Repository (set URL) <span class="arr">↗</span></a></div>
+   <div class="pf"><figure><div class="fb">
+    <!-- SCREENSHOT: replace this <pre> with <img src="passgen.png" alt="Password generator terminal session"> -->
+    <pre class="cli" role="img" aria-label="Example command-line session generating a sample password"><span class="dim">$</span> passgen
+Length (8-128): 24
+Include uppercase  [Y/n]: y
+Include digits     [Y/n]: y
+Include symbols    [Y/n]: y
+<span class="dim">source: RandomNumberGenerator</span>
+
+<span class="dim">output &gt;</span> kT7#vQ2!mZ9@xR4$wL8&amp;pN3c
+<span class="dim">(sample only — not a real password)</span></pre>
+   </div><figcaption>Fig. 002 / Command-line output</figcaption></figure></div>
+  </div></article>
+
+  <article class="proj"><div class="pg">
+   <div class="pt"><div class="pn" aria-hidden="true">003</div>
+    <p class="meta">Software / Object-oriented programming</p><h3>Banking System Simulator</h3>
+    <p class="d">An educational banking simulation exploring account management, authentication logic, and object-oriented programming.</p>
+    <ul><li>PIN-based access</li><li>Account balance management</li><li>Deposits and withdrawals</li><li>Encapsulation</li><li>Input validation</li><li>Console interaction</li></ul>
+    <p class="stk">C# / .NET / OOP</p>
+    <a class="plink" href="https://github.com/2bunuki7" target="_blank" rel="noopener">Repository (set URL) <span class="arr">↗</span></a></div>
+   <div class="pf"><figure><div class="fb">
+    <!-- SCREENSHOT: replace this <pre> with <img src="bank.png" alt="Banking simulator console"> -->
+    <pre class="cli" role="img" aria-label="Console mockup of the banking simulation with a sample balance">=====================================
+ SIMULATION — NOT A REAL BANK
+=====================================
+ Account   : DEMO-0001
+ Balance   : 1,250.00
+
+ [1] Deposit      [2] Withdraw
+ [3] Balance      [4] Exit
+
+ <span class="dim">&gt;</span> 2
+ Amount: 200
+ <span class="dim">OK. New balance: 1,050.00</span></pre>
+   </div><figcaption>Fig. 003 / Console interface (sample data)</figcaption></figure></div>
+  </div></article>
+
+  <article class="proj"><div class="pg">
+   <div class="pt"><div class="pn" aria-hidden="true">004</div>
+    <p class="meta">Automation / API integration</p><h3>Spotify Activity Automation</h3>
+    <p class="d">An automated listening-activity workflow that collects Spotify data, stores records, and generates useful summaries.</p>
+    <ul><li>Spotify API authentication</li><li>Listening metadata extraction</li><li>Timestamped data logging</li><li>Google Sheets integration</li><li>Discord webhook notifications</li><li>Artist and track frequency analysis</li></ul>
+    <p class="stk">Python / Spotify API / n8n / Google Sheets / Discord</p>
+    <a class="plink" href="https://github.com/2bunuki7" target="_blank" rel="noopener">Repository (set URL) <span class="arr">↗</span></a></div>
+   <div class="pf"><figure><div class="fb">
+    <!-- SCREENSHOT: replace this <svg> with <img src="n8n-workflow.png" alt="n8n workflow screenshot"> -->
+    <svg viewBox="0 0 700 200" role="img" aria-label="Workflow diagram: Spotify, Process, Store, Analyze, Discord" font-family="IBM Plex Mono,monospace" font-size="12" fill="none" stroke="#e6e6e2">
+     <g stroke-width="1.5"><rect x="10" y="70" width="110" height="60"/><rect x="150" y="70" width="110" height="60"/><rect x="290" y="70" width="110" height="60"/><rect x="430" y="70" width="110" height="60"/><rect x="570" y="70" width="110" height="60" fill="#e6e6e2"/></g>
+     <g stroke-width="1"><path d="M120 100H150M260 100H290M400 100H430M540 100H570"/><path d="M142 95l8 5-8 5M282 95l8 5-8 5M422 95l8 5-8 5M562 95l8 5-8 5"/></g>
+     <g fill="#e6e6e2" stroke="none" text-anchor="middle"><text x="65" y="104">SPOTIFY</text><text x="205" y="104">PROCESS</text><text x="345" y="104">STORE</text><text x="485" y="104">ANALYZE</text><text x="625" y="104" fill="#080808">DISCORD</text>
+     <g fill="#727272" font-size="10"><text x="65" y="55">API / AUTH</text><text x="205" y="55">PYTHON</text><text x="345" y="55">SHEETS</text><text x="485" y="55">FREQUENCY</text><text x="625" y="55">WEBHOOK</text><text x="65" y="155">01</text><text x="205" y="155">02</text><text x="345" y="155">03</text><text x="485" y="155">04</text><text x="625" y="155">05</text></g></g>
+    </svg></div><figcaption>Fig. 004 / System workflow</figcaption></figure></div>
+  </div></article>
+
+  <article class="proj"><div class="pg">
+   <div class="pt"><div class="pn" aria-hidden="true">005</div>
+    <p class="meta">Embedded / Electronics</p><h3>ESP32 Environmental Monitoring</h3>
+    <p class="d">An ongoing hardware project exploring environmental sensing, microcontroller integration, and circuit design.</p>
+    <ul><li>ESP32-S3 microcontroller</li><li>Environmental sensors</li><li>Light sensing</li><li>I²C communication</li><li>KiCad schematic design</li><li>Sensor library integration</li></ul>
+    <p class="stk">ESP32-S3 / KiCad / I²C / Environmental sensors</p>
+    <p class="meta stat" style="margin-bottom:16px">Status: ongoing</p>
+    <a class="plink" href="https://github.com/2bunuki7" target="_blank" rel="noopener">Repository (set URL) <span class="arr">↗</span></a></div>
+   <div class="pf"><figure><div class="fb">
+    <!-- SCREENSHOT: replace this <svg> with <img src="schematic.png" alt="KiCad schematic"> -->
+    <svg viewBox="0 0 700 320" role="img" aria-label="Schematic-style diagram of an ESP32-S3 connected to sensors over an I2C bus" font-family="IBM Plex Mono,monospace" font-size="11" fill="none" stroke="#e6e6e2" stroke-width="1.5">
+     <rect x="250" y="90" width="160" height="140"/>
+     <g fill="#e6e6e2" stroke="none" text-anchor="middle"><text x="330" y="150" font-size="14">ESP32-S3</text><text x="330" y="170" fill="#727272">U1</text></g>
+     <g stroke-width="1"><path d="M410 120H520V60H600M410 160H520V160H600M410 200H520V260H600M250 120H120M250 200H120"/><circle cx="520" cy="120" r="3" fill="#e6e6e2"/><circle cx="520" cy="160" r="3" fill="#e6e6e2"/></g>
+     <g stroke-width="1.5"><rect x="600" y="40" width="80" height="40"/><rect x="600" y="140" width="80" height="40"/><rect x="600" y="240" width="80" height="40"/><rect x="40" y="100" width="80" height="40"/><rect x="40" y="180" width="80" height="40"/></g>
+     <g fill="#e6e6e2" stroke="none" text-anchor="middle"><text x="640" y="64">SENSOR</text><text x="640" y="164">LIGHT</text><text x="640" y="264">SENSOR</text><text x="80" y="124">3V3</text><text x="80" y="204">GND</text></g>
+     <g fill="#727272" stroke="none"><text x="425" y="116">SDA</text><text x="425" y="156">SCL</text><text x="425" y="216">I²C BUS</text><text x="250" y="300">REV. DRAFT / IN PROGRESS</text></g>
+    </svg></div><figcaption>Fig. 005 / Circuit schematic (illustrative)</figcaption></figure></div>
+  </div></article>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="wrap">
+  <div class="idx">04 / Chronology</div>
+  <h2>A work in progress.</h2>
+  <p class="lede">Learning &amp; development. None of this is paid employment.</p>
+  <div style="margin-top:48px">
+   <div class="ch"><time>2026</time><div><h3>SOFTWARE DEVELOPMENT</h3><p>Building applications with C#, .NET, Python, and web technologies. Exploring desktop software, system-level behavior, and practical application architecture.</p></div></div>
+   <div class="ch"><time>2026</time><div><h3>AUTOMATION &amp; ELECTRONICS</h3><p>Experimenting with APIs, workflow automation, ESP32 microcontrollers, sensor integration, and circuit design.</p></div></div>
+   <div class="ch"><time>2025–</time><div><h3>INFORMATION TECHNOLOGY</h3><p>Studying programming, web development, databases, networking, and technical subjects while developing personal projects outside the classroom.</p></div></div>
+   <div class="ch"><time>Ongoing</time><div><h3>INDEPENDENT EXPLORATION</h3><p>Learning about Linux, reverse engineering fundamentals, creative development tools, and software internals.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="interests">
+ <div class="wrap">
+  <div class="idx">05 / Other interests</div>
+  <h2>Not everything is code.</h2>
+  <div style="margin-top:48px">
+   <div class="int"><span class="meta">001</span><div><h3>Art</h3><p>Digital creativity, visual experimentation, Blender, 3D modeling, and design.</p></div></div>
+   <div class="int"><span class="meta">002</span><div><h3>Music</h3><p>Music as a source of inspiration, concentration, and personal expression.</p></div></div>
+   <div class="int"><span class="meta">003</span><div><h3>Philosophy</h3><p>An interest in ideas, reasoning, questioning assumptions, and understanding different perspectives.</p></div></div>
+   <div class="int"><span class="meta">004</span><div><h3>Reading</h3><p>Exploring books, stories, and unfamiliar ways of thinking.</p></div></div>
+   <div class="int"><span class="meta">005</span><div><h3>Linux</h3><p>Experimenting with operating systems, desktop environments, terminal workflows, and system customization.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="idx">06 / Contact</div>
+  <h2>Let's build something.</h2>
+  <p class="lede">I'm interested in interesting problems, creative collaborations, and opportunities to learn through building.</p>
+  <div class="cta" style="margin-bottom:0;margin-top:32px">
+   <!-- EDIT: replace the placeholder address below -->
+   <a class="btn p" href="mailto:YOUR-EMAIL@EXAMPLE.COM">Contact <span class="arr">↗</span></a>
+  </div>
+  <p class="meta" style="margin-top:12px">Email is a placeholder: edit YOUR-EMAIL@EXAMPLE.COM in index.html</p>
+  <div class="dir">
+   <a href="https://github.com/2bunuki7" target="_blank" rel="noopener"><span>01 / GitHub</span><span class="arr">↗</span></a>
+   <a href="https://www.linkedin.com/in/2bunadraga7" target="_blank" rel="noopener"><span>02 / LinkedIn</span><span class="arr">↗</span></a>
+   <a href="https://www.instagram.com/bunuki__/" target="_blank" rel="noopener"><span>03 / Instagram</span><span class="arr">↗</span></a>
+   <button type="button" id="dc" aria-describedby="copied"><span>04 / Discord — 2702b</span><span>Copy</span></button>
+   <div id="copied" role="status" aria-live="polite"></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap meta">
+  <span>Buna Draga © 2026</span><span>Prishtina / Kosovo</span><span>Designed &amp; developed by Buna</span>
+  <span>2bunuki7 / End of file</span><a href="#top"><b>Back to top ↑</b></a>
+ </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('mbtn'),menu=document.getElementById('menu');
+  function setMenu(o){menu.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);btn.textContent=o?'CLOSE':'MENU';document.body.style.overflow=o?'hidden':''}
+  btn.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  window.addEventListener('resize',function(){if(innerWidth>860)setMenu(false)});
+
+  var links=[].slice.call(document.querySelectorAll('nav ul a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+    })},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{threshold:.1});
+    document.querySelectorAll('.rv').forEach(function(n){rv.observe(n)});
+  }else{document.querySelectorAll('.rv').forEach(function(n){n.classList.add('in')})}
+
+  var dc=document.getElementById('dc'),out=document.getElementById('copied');
+  function done(ok){out.textContent=ok?'Copied: 2702b':'Copy failed. Username is 2702b';setTimeout(function(){out.textContent=''},2500)}
+  dc.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText('2702b').then(function(){done(true)},function(){done(false)})}
+    else{var t=document.createElement('textarea');t.value='2702b';document.body.appendChild(t);t.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(t);done(ok)}
+  });
+})();
+</script>
+</body>
+</html>
